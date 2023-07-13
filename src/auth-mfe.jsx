@@ -8,12 +8,12 @@ import React from 'react';
 import log from 'loglevel';
 import { ErrorBoundary } from 'react-error-boundary';
 import CssBaseline from '@mui/material/CssBaseline';
-import { ThemeProvider } from '@mui/material/styles';
-import { StyledEngineProvider } from '@mui/material/styles';
+import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
 import { unstable_ClassNameGenerator as ClassNameGenerator } from '@mui/material/className';
 
 import App from './app';
 import theme from './theme';
+import { AppProviders } from './UI/context';
 // import { ErrorFallbackComponent } from './components';
 
 // enable all log levels
@@ -37,13 +37,15 @@ const AuthMfe = () => {
       // reset the state of your app so the error doesn't happen again
       onReset={() => log.info('@@ app reset')}
     >
-      <ThemeProvider theme={theme}>
-        <StyledEngineProvider injectFirst>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-          <CssBaseline />
-          <App />
-        </StyledEngineProvider>
-      </ThemeProvider>
+      <AppProviders>
+        <ThemeProvider theme={theme}>
+          <StyledEngineProvider injectFirst>
+            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+            <CssBaseline />
+            <App />
+          </StyledEngineProvider>
+        </ThemeProvider>
+      </AppProviders>
     </ErrorBoundary>
   );
 };

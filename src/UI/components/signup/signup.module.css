@@ -1,0 +1,37 @@
+#signupContainer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#signupFormBox {
+  width: 100%;
+}
+#formBox {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+/* SIGNUP-FORM */
+
+#formHeaderBox {
+  display: flex;
+  justify-content: center;
+}
+#submitButton {
+  width: 100%;
+  padding: 12px;
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* max-width: 200px; */
+}
+#submitButton:hover {
+  background-color: #2980b9;
+}

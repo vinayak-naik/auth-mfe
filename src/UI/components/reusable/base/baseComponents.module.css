@@ -1,0 +1,8 @@
+#buttonBox {
+  display: flex;
+  align-items: center;
+}
+#twoColumnInputBox {
+  display: flex;
+  gap: 10px;
+}

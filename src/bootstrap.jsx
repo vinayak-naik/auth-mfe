@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-
-import AuthMfe from './auth-mfe';
+// eslint-disable-next-line
 import reportWebVitals from './reportWebVitals';
+import AuthMfe from './auth-mfe';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

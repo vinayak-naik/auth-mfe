@@ -66,15 +66,30 @@ module.exports = {
       },
       shared: {
         ...dependencies,
+        'web-vitals': {
+          singleton: true,
+          eager: true,
+          requiredVersion: dependencies['web-vitals'],
+        },
+        yup: {
+          singleton: true,
+          eager: true,
+          requiredVersion: dependencies.yup,
+        },
+        formik: {
+          singleton: true,
+          eager: true,
+          requiredVersion: dependencies.formik,
+        },
         clsx: {
           singleton: true,
           eager: true,
-          requiredVersion: dependencies['clsx'],
+          requiredVersion: dependencies.clsx,
         },
         react: {
           singleton: true,
           eager: true,
-          requiredVersion: dependencies['react'],
+          requiredVersion: dependencies.react,
         },
         'pubsub-js': {
           singleton: true,
@@ -84,7 +99,7 @@ module.exports = {
         loglevel: {
           singleton: true,
           eager: true,
-          requiredVersion: dependencies['loglevel'],
+          requiredVersion: dependencies.loglevel,
         },
         'react-dom': {
           singleton: true,

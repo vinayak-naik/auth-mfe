@@ -27,7 +27,7 @@
     "start": "DISABLE_ESLINT_PLUGIN=true webpack serve --open --mode development --env environment=dev",
     "start:live": "webpack serve --open --mode development --live-reload --hot --env environment=dev",
     "dev": "webpack serve --mode development --env environment=dev",
-    "build": "webpack --mode production --env environment=prod",
+    "build": "DISABLE_ESLINT_PLUGIN=true webpack --mode production --env environment=prod",
     "prod": "cd build && set PORT=3000 && npx serve",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

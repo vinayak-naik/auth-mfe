@@ -26,7 +26,6 @@ const UpdateProfileSubmitButton = (props) => {
 };
 
 const SelectAccountType = (props) => {
-  const { formikProps, label } = props;
   const menuItems = [
     'ACCOUNT_UNSPECIFIED',
     'ACCOUNT_ADMIN',
@@ -43,14 +42,12 @@ const SelectAccountType = (props) => {
     <SelectInput
       menuItems={menuItems}
       conversionObject={conversionObject}
-      label={label}
-      formikProps={formikProps}
       disabled
+      {...props}
     />
   );
 };
 const SelectLanguage = (props) => {
-  const { formikProps, label } = props;
   const menuItems = ['en'];
   const conversionObject = {
     en: 'English',
@@ -59,8 +56,7 @@ const SelectLanguage = (props) => {
     <SelectInput
       menuItems={menuItems}
       conversionObject={conversionObject}
-      label={label}
-      formikProps={formikProps}
+      {...props}
     />
   );
 };

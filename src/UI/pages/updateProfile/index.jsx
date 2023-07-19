@@ -5,10 +5,12 @@ import {
 } from '../../components/updateProfile';
 import UpdateProfileForm from './updateProfileForm';
 import { getProfile, updateProfile } from '../../api/auth';
+import { SnackbarComponent } from '../../components/reusable/snackbar';
 
 function UpdateProfilePage() {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState({});
+  const [snackbar, setSnackbar] = useState({});
 
   async function getUserProfile() {
     try {
@@ -26,6 +28,8 @@ function UpdateProfilePage() {
     userData.lastName = inputData.lastName;
     try {
       await updateProfile(userData);
+
+      setSnackbar({ type: 'success', message: 'Profile Updated Successfully' });
       setLoading(false);
     } catch (error) {
       console.error(error);
@@ -49,13 +53,15 @@ function UpdateProfilePage() {
       ) : (
         <div style={{ color: 'blue' }}>Loading...</div>
       )}
+
+      <SnackbarComponent snackbar={snackbar} setSnackbar={setSnackbar} />
     </UpdateProfileContainer>
   );
 }
 
 export default UpdateProfilePage;
 
-// const response = {
+// const user = {
 //   id: '6c1a8b2e-5e62-4fc3-a6ed-ef708109582b',
 //   username: 'TestUsername',
 //   firstName: 'TestFirstName',

@@ -48,6 +48,7 @@ const SelectInput = (props) => {
         id="demo-simple-select-filled"
         {...formikProps}
         disabled={disabled}
+        {...props}
       >
         {menuItems.map((item, index) => (
           <MenuItem key={index} value={item}>
